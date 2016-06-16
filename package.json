@@ -1,0 +1,30 @@
+{
+  "name": "cisco-vpn",
+  "version": "1.0.0",
+  "description": "Wrapper around the Cisco AnyConnect VPN client.",
+  "main": "index.js",
+  "keywords": [
+    "cisco",
+    "anyconnect",
+    "virtual",
+    "private",
+    "network",
+    "vpn",
+    "client",
+    "connect",
+    "disconnect"
+  ],
+  "author": "Mark Tiedemann <www.marktiedemann@gmail.com>",
+  "license": "WTFPL",
+  "dependencies": {
+    "tmp": "0.0.28"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkTiedemann/cisco-vpn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarkTiedemann/cisco-vpn/issues"
+  },
+  "homepage": "https://github.com/MarkTiedemann/cisco-vpn"
+}
