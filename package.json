@@ -1,6 +1,6 @@
 {
   "name": "cisco-vpn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrapper around the Cisco AnyConnect VPN client.",
   "main": "index.js",
   "keywords": [
@@ -17,6 +17,7 @@
   "author": "Mark Tiedemann <www.marktiedemann@gmail.com>",
   "license": "WTFPL",
   "dependencies": {
+    "throw-if-missing": "^1.0.1",
     "tmp": "0.0.28"
   },
   "repository": {
