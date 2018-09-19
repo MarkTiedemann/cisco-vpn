@@ -7,9 +7,8 @@ const x = require('throw-if-missing')
 
 module.exports = ({ exe = 'C:/Program Files (x86)/Cisco/Cisco AnyConnect Secure Mobility Client/vpncli.exe',
                     server = x`server`, username = x`username`, password = x`password` }) => {
-
-    this.connect = () =>
-        new Promise((resolve, reject) =>
+    return {
+        connect: () => new Promise((resolve, reject) =>
             tmp.file({ prefix: 'vpn-', postfix: '.txt' }, (err, path, fd, cleanup) => {
                 if (err) reject(err)
                 else writeFile(path, `${username}\n${password}\n`, err => {
@@ -22,16 +21,13 @@ module.exports = ({ exe = 'C:/Program Files (x86)/Cisco/Cisco AnyConnect Secure 
                     })
                 })
             })
-        )
-
-    this.disconnect = () =>
-        new Promise((resolve, reject) =>
+        ),
+        disconnect: () => new Promise((resolve, reject) =>
             exec(`"${exe}" disconnect`, (err, stdout) => {
                 if (err) reject(err)
                 else if (!stdout.trim().endsWith('state: Disconnected')) reject(new Error(stdout))
                 else resolve()
             })
         )
-
-    return this
+    }
 }
